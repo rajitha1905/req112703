@@ -44,6 +44,37 @@ The [psycopg2](https://www.psycopg.org) adaptor is used. Note the [installation 
 - Run `docker compose --profile test up` command to run the unit tests from the root directory. This will run the above services as well as the unit tests.
 - The folder is volume mounted, so any changes to the code will be reflected in the container and run the unit tests again.
 
+## GitHub Actions CI/CD Workflow
+
+### Overview
+
+The GitHub Actions workflow automates the following tasks:
+
+1. **Run Unit Tests**: Ensures the application code is functioning correctly.
+2. **Build Docker Image**: Builds the Docker image for multiple architectures (`linux/amd64` and `linux/arm64`).
+3. **Publish Docker Image**: Pushes the built Docker image to the GitHub Container Registry (GHCR).
+
+### How to Trigger the Workflow
+
+The workflow is automatically triggered on:
+
+- **Pushes to the `main` branch**: Any changes pushed to the `main` branch will automatically run the workflow.
+
+To manually trigger the workflow:
+
+1. **Push a commit** to the `main` branch.
+2. The workflow will start automatically, running the unit tests, building the Docker image, and pushing it to GHCR.
+
+### How to Pull and Run the Docker Image
+
+The Docker image is published to the GitHub Container Registry (GHCR) and is publicly accessible. You can pull and run the image using the following commands:
+
+```bash
+docker pull ghcr.io/rajitha1905/req112703:latest
+docker run -p 8000:8000 ghcr.io/rajitha1905/req112703:latest
+```
+Port 8000 is exposed by default and can be accessed via http://localhost:8000.
+
 
 ## The API
 
