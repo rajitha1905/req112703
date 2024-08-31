@@ -14,3 +14,4 @@
 
 ### Changed
 - Updated the PATH for Poetry in start-local.sh
+- Updated README.md file to include CI workflow
