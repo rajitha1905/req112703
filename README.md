@@ -71,7 +71,7 @@ The Docker image is published to the GitHub Container Registry (GHCR) and is pub
 
 ```bash
 docker pull ghcr.io/rajitha1905/req112703:latest
-docker run -p 8000:8000 ghcr.io/rajitha1905/req112703:latest
+docker run -p 8000:3000 ghcr.io/rajitha1905/req112703:latest
 ```
 Port 8000 is exposed by default and can be accessed via http://localhost:8000.
 
