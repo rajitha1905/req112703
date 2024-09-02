@@ -69,6 +69,15 @@ To manually trigger the workflow:
 
 The Docker image is published to the GitHub Container Registry (GHCR) and is publicly accessible. You can pull and run the image using the following commands:
 
+linux/amd64
+```bash
+$ docker pull ghcr.io/rajitha1905/req112703:latest@sha256:866a64e39386b31151beb4345cc9be81f9945b858ba2ac456cf8fde63172f804
+```
+linux/arm64
+```bash
+$ docker pull ghcr.io/rajitha1905/req112703:latest@sha256:98aea50b153d2ed29eb5975dadb1afaf596f17a90b830666d2c346a6258b9f48
+```
+For running locally
 ```bash
 docker pull ghcr.io/rajitha1905/req112703:latest
 docker run -p 8000:3000 ghcr.io/rajitha1905/req112703:latest
